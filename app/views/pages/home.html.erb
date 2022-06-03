@@ -1,17 +1,45 @@
 <div class="home-banner">
   <h1>Artisanat fait main en Guadeloupe</h1>
 </div>
-<div class="container">
-  <div class="our-history">
-    <div class="our-history-content">
-      <h1>Notre histoire</h1>
-      <p><%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 20 %></p>
-    </div>
-    <div class="our-history-photo">
-      <%= image_tag 'claire.jpeg', title: "claire", class: "our-history-photo", data: { description: '..', title: '..' }  %>
-    </div>
+<div class="our-history-banner" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url(<%= asset_path 'body_20.jpeg' %>);">
+  <div class="container">
+      <div class="our-history">
+        <div class="our-history-content">
+          <h1>Notre histoire</h1>
+          <p>Juillet 2020, après plusieurs années à sillonner
+            le monde et suite au covid me voilà de retour
+            sur mon ile natale : la Guadeloupe.
+            Avec un diplôme en tourisme en poche, trouver
+            du travail en cette période de crise sanitaire fut
+            compliqué. Aussi déçue de voir que l'offre de
+            produit de décoration en Guadeloupe est très
+            limitée et axée principalement sur du « Made in
+            China ».
+            L'idée de Shine FWI est née : celle de
+            développer la production de produit de
+            décoration fait main et « Made in Gwada ».
+            En Mai 2022, l'aventure Shine FWI voit le jour
+            sous les cocotiers de Guadeloupe.</p>
+        </div>
+        <div class="our-history-photo">
+          <%= image_tag 'claire.jpeg', title: "claire", class: "our-history-photo", data: { description: '..', title: '..' }  %>
+        </div>
+      </div>
+      <div class="our-goal">
+        <h1>Nos objectifs</h1>
+        <p>Soucieuse de mon impact sur l'environnement nos produits sont faits main et
+          créés avec des matériaux naturels et durables. Voici les challenges que Shine
+          FWI s'est fixés :
+        </p>
+         <li>Mettre en valeur l'artisanat en Guadeloupe en proposant des pièces de
+          décorations uniques à la demande</li>
+          <li>Créer des séries limitées en petite quantité. Ces capsules sont créées en
+          fonction de mes différentes inspirations et ont pour mot d'ordre l'upcycling.</li>
+          <li>Développer l'offre d'activité artistique en proposant des ateliers créatifs.</li>
+      </div>
   </div>
 </div>
+
 
 
 

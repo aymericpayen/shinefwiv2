@@ -11,3 +11,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+// Importing custom font 'Moontime'
+@font-face {
+  font-family: 'Moontime';
+  src: url('/fonts/moonTime-regular.otf')
+}
