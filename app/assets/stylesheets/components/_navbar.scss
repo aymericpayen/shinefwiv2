@@ -1,19 +1,73 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-  background-color: transparent;
-  transition: 0.5s background-color ease;
+.nav-lists {
+  font-family: 'Montserrat', sans-serif;
+  color: $gold;
+  width: 100%;
+  justify-content: space-evenly;
+  text-decoration: None;
 }
 
-.navbar-lewagon-white {
-  background-color: white;
+.text h2 {
+  margin: 0;
+  line-height: 100px;
+  font-size: 48px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.nav {
+  position:fixed;
+  background: #FBFAF9;
+  color: #FFF;
+  display: flex
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+img {
+  height: 60px;
+  width: 60px;
   border-radius: 50px;
+}
+
+.nav .logo {
+  font-size: 24px;
+  padding: 10px;
+}
+
+.nav .logo a {
+  color: #FFF;
+  text-decoration: none
+}
+
+.nav ul {
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  margin-left: auto
+}
+
+ul li {
+  padding: 20px;
+  list-style: none
+}
+
+ul li a {
+  color: $gold;
+  display: block;
+  text-decoration: none;
+  font-weight: bold
+}
+
+.a:hover {
+  opacity: 0.7;
+  color: $gold;
+}
+
+section {
+  height: 300px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%
 }
