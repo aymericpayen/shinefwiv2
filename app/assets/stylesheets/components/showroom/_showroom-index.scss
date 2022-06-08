@@ -32,3 +32,33 @@
   display: flex;
   justify-content: baseline;
 }
+
+.swiper-slide {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pink {
+  background-color: lightpink;
+}
+
+.green {
+  background-color: lightgreen;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: $gold;
+  border-color:$gold;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: $gold;
+  border-color: $gold;
+}
