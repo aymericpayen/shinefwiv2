@@ -7,8 +7,7 @@
   text-align: center;
 }
 
-.showrooms-description h1, .showrooms-unique h1,
-.showrooms-limited h1 {
+.showrooms-description h1, .showrooms-unique h1 {
     padding-bottom: 10px;
     margin: auto;
     font-family: 'Moontime';
@@ -21,6 +20,20 @@
     padding: 10px;
     max-width: 210px;
     margin-bottom: 30px;
+}
+
+.showrooms-limited h1 {
+  padding-bottom: 10px;
+  margin: auto;
+  font-family: 'Moontime';
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: $gold;
+  border-width: 2px;
+  padding: 10px;
+  max-width: 210px;
 }
 
 .showrooms-description p, .showrooms-unique p,
@@ -38,27 +51,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
-.pink {
-  background-color: lightpink;
-}
-
-.green {
-  background-color: lightgreen;
-}
-
-.blue {
-  background-color: lightblue;
-}
-
+// Navigation button caroussel
 .swiper-button-prev, .swiper-button-next {
   color: $gold;
   border-color:$gold;
 }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  color: $gold;
-  border-color: $gold;
+.swiper-button-prev, .swiper-button-next  {
+  background-image: url(./arrow-caroussel.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-next {
+  transform: rotate(180deg);;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $gold;
 }
