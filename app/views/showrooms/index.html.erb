@@ -26,6 +26,13 @@
       <p>Ces capsules sont créées en fonction de mes différentes inspirations. Ces série
         limitées sont produits en petite quantité.
       </p>
+    <%@showrooms.each do |showroom| %>
+      <% showroom.photo_showrooms.each do |photo| %>
+        <%= cl_image_tag(photo.url,
+        width: 400, height: 300) %>
+      <% end %>
+    <% end %>
+
       <!-- Slider main container -->
       <div data-controller="carousel" class="swiper-container" class="swiper-container w-25 my-5"
           data-carousel-options-value='{
