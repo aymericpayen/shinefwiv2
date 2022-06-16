@@ -26,13 +26,6 @@
       <p>Ces capsules sont créées en fonction de mes différentes inspirations. Ces série
         limitées sont produits en petite quantité.
       </p>
-    <%@showrooms.each do |showroom| %>
-      <% showroom.photo_showrooms.each do |photo| %>
-        <%= cl_image_tag(photo.url,
-        width: 400, height: 300) %>
-      <% end %>
-    <% end %>
-
       <!-- Slider main container -->
       <div data-controller="carousel" class="swiper-container" class="swiper-container w-25 my-5"
           data-carousel-options-value='{
@@ -42,18 +35,15 @@
                           "prevEl": ".swiper-button-prev"}}'>
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="carrousel-photos">
-              <h1>hello1</h1>
-              <h1>hello2</h1>
-              <h1>hello3</h1>
-            </div>
-          </div>
-          <div class="swiper-slide  carrousel-photos">
-            <h1>hello4</h1>
-            <h1>hello5</h1>
-            <h1>hello6</h1>
-          </div>
+          <!-- Slicing 2 by 2 and displaying the first picture in carrousel -->
+          <% @showrooms.each_slice(2).with_index do |slice, index| %>
+              <div class="swiper-slide carrousel-photos">
+                <% slice.each do |showroom| %>
+                  <%= cl_image_tag(showroom.photo_showrooms.first.url,
+                  width: 400, height: 300) %>
+                <% end %>
+              </div>
+          <% end %>
         </div>
       <!-- Pagination (... or 1/10 or progress bar) -->
         <div class="swiper-pagination"></div>
