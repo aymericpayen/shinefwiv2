@@ -47,11 +47,18 @@
 }
 
 .swiper-slide {
-  height: 250px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
+.swiper-slide img{
+  max-width: 300px;
+  margin: 10px 10px;
+  border-radius: 20px;
+  object-fit: fill;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2)
 }
 
 // Navigation button caroussel
