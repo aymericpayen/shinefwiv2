@@ -10,6 +10,7 @@ import "channels"
 import "controllers"
 // Stimulus caroussel
 import "swiper"
+import "../application.css"
 
 Rails.start()
 Turbolinks.start()
