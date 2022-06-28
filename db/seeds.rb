@@ -15,47 +15,46 @@ require "open-uri"
 puts "Cleaning database..."
 
 Showroom.destroy_all
-PhotoShowroom.destroy_all
 puts "Creating database..."
 puts "Creating Showrooms..."
 
+# Cloudinary generic path
+cloudinary_generic= "https://res.cloudinary.com/dq6zcwxpy/image/upload/"
+
 # Item.create(name: "", description: "", price: "", comments: [], quantity:0, :type_showroom: "", starting_from: "50€ - 150€")
-showroom1 = Showroom.new(name: "Macrame XXL", description: "Des collections de macrame taille XXL", comment: [], type_showroom: 1, starting_from: "50€ - 150€")#, photo: "v1655154457/shinefwi/macramexxl/Macrame_XXL_1_zesdfo.jpg")
-showroom1.save
-p showroom1.id
+showroom1 = Showroom.create!(name: "Macrame XXL", description: "Des collections de macrame taille XXL", comment: [], type_showroom: 1, starting_from: "50€ - 150€")
+file = URI.open("#{cloudinary_generic}v1655154457/shinefwi/macramexxl/Macrame_XXL_1_zesdfo.jpg")
+p "#{cloudinary_generic}v1655154457/shinefwi/macramexxl/Macrame_XXL_1_zesdfo.jpg"
+showroom1.photos.attach(io: file, filename: "Macrame_XXL_1_zesdfo.jpg", content_type: 'image/jpg')
 
-photo_showroom1 = PhotoShowroom.new(url: 'v1655154457/shinefwi/macramexxl/Macrame_XXL_1_zesdfo.jpg')
-photo_showroom1.save
-p photo_showroom1
-photo_showroom1.showroom = showroom1
-p photo_showroom1
-photo_showroom1.save
-p photo_showroom1
+showroom2= Showroom.create!(name: "Home décor", description: "Un univers de deco boho tropical pour sublimer vos espaces", comment: [], type_showroom: 2, starting_from: "50€ - 100€")
+file = URI.open("#{cloudinary_generic}v1655154457/shinefwi/macramexxl/Macrame_XXL_4_byjqn8.jpg")
+showroom2.photos.attach(io: file, filename:"Macrame_XXL_4_byjqn8.jpg", content_type: 'image/jpg')
+# photo_showroom2 = PhotoShowroom.new(url: 'v1655154457/shinefwi/macramexxl/Macrame_XXL_4_byjqn8.jpg')
+# photo_showroom2.save
+# photo_showroom2.showroom = showroom2
+# p photo_showroom2
+# photo_showroom2.save
+# p photo_showroom2
 
-showroom2= Showroom.create(name: "Home décor", description: "Un univers de deco boho tropical pour sublimer vos espaces", comment: [], type_showroom: 2, starting_from: "50€ - 100€")
-photo_showroom2 = PhotoShowroom.new(url: 'v1655154457/shinefwi/macramexxl/Macrame_XXL_4_byjqn8.jpg')
-photo_showroom2.save
-photo_showroom2.showroom = showroom2
-p photo_showroom2
-photo_showroom2.save
-p photo_showroom2
-
-showroom3 = Showroom.create(name: "La  Mode", description: "La mode est un langage qui se crée dans des vêtements pour interpréter la réalité.", comment: [], type_showroom: 1, starting_from: "100€ - 200€")
-photo_showroom3 = PhotoShowroom.new(url: 'v1655154457/shinefwi/macramexxl/Macrame_XXL_3_o3sgby.jpg')
-photo_showroom3.save
-photo_showroom3.showroom = showroom3
-p photo_showroom3
-photo_showroom3.save
-p photo_showroom3
+showroom3 = Showroom.create!(name: "La  Mode", description: "La mode est un langage qui se crée dans des vêtements pour interpréter la réalité.", comment: [], type_showroom: 1, starting_from: "100€ - 200€")
+file = URI.open("#{cloudinary_generic}v1655154457/shinefwi/macramexxl/Macrame_XXL_3_o3sgby.jpg")
+showroom3.photos.attach(io: file, filename:"Macrame_XXL_3_o3sgby.jpg", content_type: 'image/jpg')
+# photo_showroom3 = PhotoShowroom.new(url: 'v1655154457/shinefwi/macramexxl/Macrame_XXL_3_o3sgby.jpg')
+# photo_showroom3.save
+# photo_showroom3.showroom = showroom3
+# p photo_showroom3
+# photo_showroom3.save
+# p photo_showroom3
 
 
 showroom4 = Showroom.create(name: "La  Mode", description: "La mode est un langage qui se crée dans des vêtements pour interpréter la réalité.", comment: [], type_showroom: 1, starting_from: "100€ - 200€")
-photo_showroom4 = PhotoShowroom.new(url: 'v1655154457/shinefwi/macramexxl/Macrame_XXL_5_szolqw.jpg')
-photo_showroom4.save
-photo_showroom4.showroom = showroom4
-p photo_showroom4
-photo_showroom4.save
-p photo_showroom4
+# photo_showroom4 = PhotoShowroom.new(url: 'v1655154457/shinefwi/macramexxl/Macrame_XXL_5_szolqw.jpg')
+# photo_showroom4.save
+# photo_showroom4.showroom = showroom4
+# p photo_showroom4
+# photo_showroom4.save
+# p photo_showroom4
 
 
 #showroom2= Showroom.create(name: "Home décor", description: "Un univers de deco boho tropical pour sublimer vos espaces", comment: [], type_showroom: 2, starting_from: "50€ - 100€")
