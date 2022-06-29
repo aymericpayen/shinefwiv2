@@ -21,10 +21,33 @@
       <p>A partir de 85 euros vous pouvez commander votre macramé sur mesure
          Une piece unique cree selon vos envies ! N'attendez plus, contactez nous
       </p>
-      <div class="carrousel-photos">
-        <h1>hello1</h1>
-        <h1>hello2</h1>
-        <h1>hello3</h1>
+      <!-- Slider main container -->
+      <div data-controller="carousel" class="swiper-container" class="swiper-container w-25 my-5"
+          data-carousel-options-value='{
+          "pagination": { "el": ".swiper-pagination",
+                          "dynamicBullets": "true" },
+          "navigation": { "nextEl": ".swiper-button-next",
+                          "prevEl": ".swiper-button-prev"}}'>
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slicing 2 by 2 and displaying the first picture in carrousel -->
+          <% @showrooms.each_slice(2).with_index do |slice, index| %>
+              <div class="swiper-slide carrousel-photos">
+                <% slice.each do |showroom| %>
+                  <% if showroom.photos.attached? %>
+                    <%= cl_image_tag(showroom.photos.first.key,
+                    width: 400, height: 300) %>
+                  <% end %>
+                <% end %>
+              </div>
+          <% end %>
+        </div>
+        <!-- Pagination (... or 1/10 or progress bar) -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Navigation buttons (< >) -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
     <div class="showrooms-limited">
@@ -45,18 +68,21 @@
           <% @showrooms.each_slice(2).with_index do |slice, index| %>
               <div class="swiper-slide carrousel-photos">
                 <% slice.each do |showroom| %>
-                  <%= cl_image_tag(showroom.photo_showrooms.first.url,
-                  width: 400, height: 300) %>
+                  <% if showroom.photos.attached? %>
+                    <%= cl_image_tag(showroom.photos.first.key,
+                    width: 400, height: 300) %>
+                  <% end %>
                 <% end %>
               </div>
           <% end %>
         </div>
-      <!-- Pagination (... or 1/10 or progress bar) -->
+        <!-- Pagination (... or 1/10 or progress bar) -->
         <div class="swiper-pagination"></div>
 
         <!-- Navigation buttons (< >) -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
+    </div>
   </div>
 </div>
