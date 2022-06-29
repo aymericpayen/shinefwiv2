@@ -1,0 +1,39 @@
+.showroom-new-form {
+ display: grid;
+ justify-content: center;
+ align-items: center;
+}
+
+.showroom-new-form h1 {
+  color: $gold;
+  margin: 20px;
+}
+
+#new_showroom {
+  display:grid;
+  margin: 20px 0px 20px 0px;
+  border-style: solid;
+  border-color: $gold;
+  border-width: 2px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.button-new {
+  border-radius: 20px;
+  border-style: solid;
+  border-color: transparent;
+  width: fit-content;
+  background-color: $gold ;
+  color: #FFF;
+  opacity: 0.7;
+}
+
+.button-new:hover {
+  opacity: 1;
+  color: #FFF;
+}
+
+.margin-top-new {
+  margin-top: 10px;
+}
