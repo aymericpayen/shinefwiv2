@@ -1,4 +1,4 @@
 class Showroom < ApplicationRecord
   has_many_attached :photos
-  validates :name, :description, :starting_from, :photos, presence: true
+  validates :name, :description, :starting_from, presence: true
 end

@@ -49,6 +49,8 @@ showroom3.photos.attach(io: file, filename:"Macrame_XXL_3_o3sgby.jpg", content_t
 
 
 showroom4 = Showroom.create(name: "La  Mode", description: "La mode est un langage qui se crée dans des vêtements pour interpréter la réalité.", comment: [], type_showroom: 1, starting_from: "100€ - 200€")
+file = URI.open("#{cloudinary_generic}v1655154457/shinefwi/macramexxl/Macrame_XXL_5_szolqw.jpg")
+showroom4.photos.attach(io: file, filename:"Macrame_XXL_5_szolqw.jpg", content_type: 'image/jpg')
 # photo_showroom4 = PhotoShowroom.new(url: 'v1655154457/shinefwi/macramexxl/Macrame_XXL_5_szolqw.jpg')
 # photo_showroom4.save
 # photo_showroom4.showroom = showroom4
