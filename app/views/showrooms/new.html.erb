@@ -1,11 +1,12 @@
 <%= stylesheet_link_tag 'showrooms', media: 'all', 'data-turbolinks-track': 'reload' %>
 <div class="container">
   <div class="showroom-new-form">
+    <h1>Création d'un nouvel article</h1>
     <%= simple_form_for @showroom do |f| %>
       <%= f.label :name, label: "Renseigner le nom de l'article que vous voulez créer:", class:"margin-top-new" %>
       <%= f.text_field :name, class:"margin-top-new" %>
       <%= f.label :description, label: "Renseigner une description de l'article que vous voulez créer", class:"margin-top-new" %>
-      <%= f.text_field :description, class:"margin-top-new" %>
+      <%= f.input :description, class:"margin-top-new", as: :text %>
       <%= f.label :starting_from, label: "Renseigner un le prix de départ de cet article", class:"margin-top-new" %>
       <%= f.number_field :starting_from, class:"margin-top-new" %>
       <%= f.input :photos, as: :file, input_html: { multiple: true }, label:"Selectionner une ou plusieurs photos pour illustrer l'article:", class:"margin-top"%>

@@ -1,7 +1,12 @@
 .showroom-new-form {
- display: flex;
+ display: grid;
  justify-content: center;
  align-items: center;
+}
+
+.showroom-new-form h1 {
+  color: $gold;
+  margin: 20px;
 }
 
 #new_showroom {
